@@ -4,6 +4,19 @@
   box-sizing: border-box;
   user-select: none;
 }
+
+/* Variables start */
+:root {
+  --blur: 0px;
+  --invert: 0%;
+  --sepia: 0%;
+  --saturate: 100%;
+  --hue-rotate: 0deg;
+  --brightness: 100%;
+  --contrast: 100%;
+}
+/* Variables end */
+
 a:focus {
   outline: 0;
 }
@@ -44,7 +57,8 @@ label:not(.btn) {
   color: #a2abb3;
   font-size: 16px;
 }
-label:hover {
+label:hover
+ {
   color: #cbd5de;
 }
 label:hover output {
@@ -161,22 +175,23 @@ output {
   width: 100%;
   max-width: 60%;
 }
-:root {
-  --blur: 0px;
-  --invert: 0%;
-  --sepia: 0%;
-  --saturate: 100%;
-  --hue: 0deg;
-}
+
 img {
   height: 100%;
   width: 100%;
   max-height: 520px;
   max-width: 830px;
   object-fit: contain;
-  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
-    sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
-    hue-rotate(var(--hue, 0deg));
+  filter: blur(var(--blur, 0px)) 
+          invert(var(--invert, 0%))
+          sepia(var(--sepia, 0%)) 
+          saturate(var(--saturate, 100%))
+          hue-rotate(var(--hue-rotate, 0deg))
+          brightness(var(--brightness, 110%))
+          contrast(var(--contrast, 100%))
+}
+canvas {
+  display: none;
 }
 .fullscreen {
   position: fixed;
@@ -196,6 +211,12 @@ img {
   background-color: rgba(255, 255, 255, 0.5);
 }
 :-webkit-full-screen .fullscreen {
+  background-image: url('assets/svg/fullscreen-exit.svg');
+}
+:-moz-full-screen .fullscreen {
+  background-image: url('assets/svg/fullscreen-exit.svg');
+}
+:-ms-fullscreen .fullscreen {
   background-image: url('assets/svg/fullscreen-exit.svg');
 }
 .footer {
@@ -258,6 +279,44 @@ img {
   right: -5px;
   letter-spacing: 0;
 }
+.presets-wrapper{
+  height: 100%;
+  /* align-self: center; */
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  /* margin-bottom: 40px; */
+}
+.pres{
+  width: 162px;
+  height: 150px;
+ border: none;
+ margin-bottom: 30px;
+ 
+}
+.preset{
+  object-fit: cover;
+
+}
+.img-wrapper{
+margin-bottom: 20px;}
+.presset-name{
+color: #a2abb3;
+font-size: 16px;
+font-family: 'Open Sans', Arial, Helvetica, sans-serif;}
+
+.pres:hover{
+  opacity: 0.7;
+}
+.pres:hover .presset-name
+{
+  color: #fff;
+}
+
+
+
+
 @media (max-width: 1024px) {
   .main {
     padding-top: 40px;

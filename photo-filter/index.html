@@ -38,8 +38,18 @@
       </label>
       <label>
         Hue rotate:
-        <input name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" />
+        <input name="hue-rotate" data-sizing="deg" type="range" min="0" max="360" value="0" />
         <output name="result">0</output>
+      </label>
+      <label>
+        Brightness:
+        <input name="brightness" data-sizing="%" type="range" min="0" max="300" value="100" />
+        <output name="result">100</output>
+      </label>
+      <label>
+        Contrast:
+        <input name="contrast" data-sizing="%" type="range" min="0" max="200" value="100" />
+        <output name="result">100</output>
       </label>
     </div>
     <div class="editor">
@@ -52,7 +62,33 @@
         </label>
         <button class="btn btn-save">Save picture</button>
       </div>
-      <img src="assets/img/img.jpg" alt="image" />
+      <div class="img-wrapper">
+      <img class="photo" src="assets/img/img.jpg" alt="image" />
+      <canvas class="saved-img"></canvas>
+    </div>
+    <div class="presets-wrapper">
+
+      <button class="pres" >
+        <img src="assets/img/img.jpg" alt="" class="preset" id="preset1">
+        <span class="presset-name">Old Photo </span>
+      </button>
+
+      <button class="pres" >
+        <img src="assets/img/img.jpg" alt="" class="preset" id="preset2" >
+        <span class="presset-name">Cold Tone</span>
+      </button>
+
+      <button class="pres" >
+        <img src="assets/img/img.jpg" alt="" class="preset" id="preset3">
+        <span class="presset-name">Intensive Color</span>
+      </button>
+
+      <button class="pres" >
+        <img src="assets/img/img.jpg" alt="" class="preset" id="preset4">
+        <span class="presset-name">Warm Tone</span>
+      </button>
+
+    </div>
     </div>
   </main>
   <footer class="footer">
